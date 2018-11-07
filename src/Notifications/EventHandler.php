@@ -31,9 +31,7 @@ class EventHandler
             }
 
             if ($notification->isStillRelevant()) {
-                $notifiable = $this->determineNotifiable();
-
-                $notifiable->notify($notification);
+                $event->monitor->user->notify($notification);
             }
         });
     }
